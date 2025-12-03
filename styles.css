@@ -12,11 +12,33 @@ body {
 
 .content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+p {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .hero-image {
-    width: min(90vw, 748px);
-    max-height: 90vh;
+    width: min(70vw, 420px);
+    max-height: 60vh;
     height: auto;
     display: block;
 }
