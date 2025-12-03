@@ -14,13 +14,9 @@ body {
     text-align: center;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-p {
-    margin: 0.25rem 0;
-    font-size: 1.2rem;
+.hero-image {
+    width: min(90vw, 748px);
+    max-height: 90vh;
+    height: auto;
+    display: block;
 }

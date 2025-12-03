@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# PyCharm project files
+/*.iml
+/modules.xml
+/misc.xml
+/vcs.xml
+/inspectionProfiles/
