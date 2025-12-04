@@ -44,6 +44,21 @@ p {
     line-height: 1.7;
 }
 
+.cta-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.cta-icon {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    background: #0a1a30;
+}
+
 .hero-image {
     width: min(90vw, 520px);
     max-height: 65vh;
