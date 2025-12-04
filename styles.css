@@ -98,6 +98,41 @@ p {
     font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
 }
 
+/* Multilingual Section Styles */
+.multilingual {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    line-height: 1.75;
+}
+
+.multilingual h2 {
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.multilingual h3 {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #ffd46b; /* highlight language headers */
+}
+
+.multilingual p {
+    font-size: 1rem;
+    color: #ddd;
+    margin: 0.5rem 0 1rem;
+    max-width: 900px;
+}
+
+.multilingual hr {
+    margin: 2.5rem 0;
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
