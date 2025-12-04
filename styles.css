@@ -50,6 +50,21 @@ p {
     gap: 0.6rem;
 }
 
+.steam-link {
+    color: #cfdfff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.steam-link:hover {
+    color: #e5ecff;
+    text-decoration: underline;
+}
+
+.steam-link .cta-icon {
+    display: block;
+}
+
 .cta-icon {
     width: 64px;
     height: 64px;
