@@ -104,6 +104,16 @@ p {
     margin-top: 0.5rem;
 }
 
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 1rem 0;
+    font-size: 0.95rem;
+    color: #ccc;
+    text-align: center;
+}
+
 @media (min-width: 900px) {
     .content {
         flex-direction: row;
