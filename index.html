@@ -121,6 +121,21 @@
         </div>
     </section>
 
+    <section aria-label="Newsletter signup" class="newsletter-section">
+        <h3>Join our Newsletter</h3>
+        <p>Subscribe for Deep Board Go progress, screenshots, and early access news.</p>
+        <form id="subscribe-form">
+            <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+            />
+            <button type="submit">Subscribe</button>
+            <p id="msg" aria-live="polite"></p>
+        </form>
+    </section>
+
     <section class="video-section" aria-label="Deep Board Go video showcase">
         <h2>Watch Deep Board Go in Motion</h2>
         <div class="video-wrapper">
@@ -232,6 +247,30 @@
 <footer class="footer">
     <p>Copyright 2025 by DeepBoardGo Studio</p>
 </footer>
+
+<script>
+    const form = document.getElementById("subscribe-form");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        msg.textContent = "Submitting…";
+
+        fetch(
+            "https://script.google.com/macros/s/AKfycbwiq7kIhgV0lQBIo_fIqgIbvfTjF710zgkZCo_HhE6Z7uCoOKvx3y3PQRVaLlRmjlzD/exec",
+            {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify({
+                    email: form.email.value.trim()
+                })
+            }
+        );
+
+        msg.textContent = "Thanks! You're on the list 🙂";
+        form.reset();
+    });
+</script>
 
 </body>
 </html>
