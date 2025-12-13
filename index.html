@@ -121,6 +121,25 @@
         </div>
     </section>
 
+    <section aria-label="Newsletter signup" class="newsletter-section">
+        <h3>Join our Newsletter</h3>
+        <p>Subscribe for Deep Board Go progress, screenshots, and early access news.</p>
+        <form id="subscribe-form" class="newsletter">
+            <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                    aria-label="Email address"
+            />
+            <!-- honeypot field (anti-bot) -->
+            <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off">
+
+            <button type="submit">Subscribe</button>
+            <p id="form-message" class="newsletter-message" aria-live="polite"></p>
+        </form>
+    </section>
+
     <section class="video-section" aria-label="Deep Board Go video showcase">
         <h2>Watch Deep Board Go in Motion</h2>
         <div class="video-wrapper">
@@ -174,9 +193,6 @@
         <p>P.S. <br/>
             <i>We have a collection of boards in our studio, including a Hon Kaya table board, a Hon Kaya board with
                 legs, and several Shin Kaya boards. We’ll be sharing photos of them soon.</i></p>
-
-        <!-- Newsletter Signup -->
-
 
         <br>
 
@@ -235,6 +251,45 @@
 <footer class="footer">
     <p>Copyright 2025 by DeepBoardGo Studio</p>
 </footer>
+
+<script>
+    const form = document.getElementById("subscribe-form");
+    const message = document.getElementById("form-message");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        message.textContent = "Submitting…";
+
+        // honeypot check
+        if (form.company.value) {
+            message.textContent = "Thanks!";
+            form.reset();
+            return;
+        }
+
+        try {
+            const res = await fetch(
+                "https://script.google.com/macros/s/AKfycbwiq7kIhgV0lQBIo_fIqgIbvfTjF710zgkZCo_HhE6Z7uCoOKvx3y3PQRVaLlRmjlzD/exec",
+                {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        email: form.email.value.trim()
+                    })
+                }
+            );
+
+            if (res.ok) {
+                message.textContent = "Thanks! You're on the list 🙂";
+                form.reset();
+            } else {
+                message.textContent = "Something went wrong. Please try again.";
+            }
+        } catch (err) {
+            message.textContent = "Network error. Please try again later.";
+        }
+    });
+</script>
 
 </body>
 </html>

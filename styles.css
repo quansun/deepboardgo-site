@@ -217,6 +217,75 @@ p {
     text-align: center;
 }
 
+.newsletter-section {
+    width: min(900px, 100%);
+    margin: clamp(1rem, 2vw, 1.75rem) auto 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.newsletter-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+}
+
+.newsletter-section p {
+    margin: 0 0 1rem;
+    color: #dcdcdc;
+    font-size: 1rem;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.newsletter input[type="email"] {
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f5f5f5;
+    font-size: 1rem;
+}
+
+.newsletter input[type="email"]::placeholder {
+    color: #9ba3b0;
+}
+
+.newsletter button {
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #4a8bff, #7c5bff);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.newsletter button:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.newsletter button:active {
+    transform: translateY(1px);
+}
+
+.newsletter-message {
+    min-height: 1.2em;
+    color: #cfdfff;
+    font-size: 0.96rem;
+    margin: 0;
+}
+
 .kit-embed {
     display: flex;
     justify-content: center;
