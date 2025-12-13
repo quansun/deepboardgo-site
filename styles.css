@@ -145,6 +145,11 @@ p {
     max-width: 900px;
 }
 
+.devlog-translations p {
+    font-size: clamp(1.08rem, 1vw + 0.95rem, 1.22rem);
+    line-height: 1.85;
+}
+
 .multilingual hr {
     margin: 2.5rem 0;
     border: 0;
@@ -263,8 +268,9 @@ p {
 
 .devlog p {
     margin: 0;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #e6e6e6;
+    font-size: clamp(1.12rem, 1vw + 1rem, 1.28rem);
 }
 
 .devlog-meta {
