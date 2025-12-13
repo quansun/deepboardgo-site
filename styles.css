@@ -48,6 +48,11 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
+    margin: 0;
+}
+
+.cta-line + .cta-line {
+    margin-top: 0.65rem;
 }
 
 .steam-link {
@@ -63,6 +68,20 @@ p {
 
 .steam-link .cta-icon {
     display: block;
+}
+
+.devlog-link {
+    color: #b5b5b5;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.devlog-link:hover {
+    color: #e2e2e2;
 }
 
 .cta-icon {
@@ -197,6 +216,132 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
+}
+
+.article-page {
+    width: min(900px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.back-link {
+    align-self: flex-start;
+    color: #cfdfff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.devlog {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.devlog h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw + 1.25rem, 2.6rem);
+}
+
+.devlog p {
+    margin: 0;
+    line-height: 1.8;
+    color: #e6e6e6;
+}
+
+.devlog-meta {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #b5b5b5;
+    margin: 0;
+}
+
+.devlog-date {
+    margin: -0.35rem 0 0.35rem;
+    font-size: 0.95rem;
+    color: #cfdfff;
+}
+
+.devlog-section {
+    width: min(900px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin: clamp(1.75rem, 3vw, 3rem) auto 0;
+    padding: 0 0.5rem;
+}
+
+.devlog-section h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
+}
+
+.devlog-intro {
+    margin: 0;
+    color: #cfdfff;
+    font-size: 1rem;
+}
+
+.devlog-list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.devlog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.devlog-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.devlog-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.devlog-item-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.devlog-item-title a {
+    color: #e6e6e6;
+    text-decoration: none;
+}
+
+.devlog-item-title a:hover {
+    text-decoration: underline;
+}
+
+.devlog-item-desc {
+    margin: 0;
+    color: #cfdfff;
+    font-size: 0.98rem;
 }
 
 .footer {
