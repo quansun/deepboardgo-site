@@ -342,6 +342,18 @@ p {
     font-size: clamp(1.12rem, 1vw + 1rem, 1.28rem);
 }
 
+.devlog-image {
+    margin: 0;
+}
+
+.devlog-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
 .devlog-meta {
     letter-spacing: 0.08em;
     text-transform: uppercase;
