@@ -278,9 +278,22 @@
     <p>Copyright 2025 by DeepBoardGo Studio</p>
 </footer>
 
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot preview">
+    <div class="lightbox-content" role="document">
+        <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+        <img id="lightbox-image" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+</div>
+
 <script>
     const form = document.getElementById("subscribe-form");
     const msg = document.getElementById("msg");
+    const gallery = document.querySelector(".gallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeButton = document.querySelector(".lightbox-close");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -299,6 +312,49 @@
 
         msg.textContent = "Thanks! You're on the list 🙂";
         form.reset();
+    });
+
+    const openLightbox = (img) => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "";
+        lightboxCaption.textContent = img.alt || "";
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.classList.remove("modal-open");
+    };
+
+    if (gallery) {
+        gallery.querySelectorAll("img").forEach((img) => {
+            img.setAttribute("role", "button");
+            img.setAttribute("tabindex", "0");
+            img.setAttribute("aria-haspopup", "dialog");
+            img.addEventListener("click", () => openLightbox(img));
+            img.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox(img);
+                }
+            });
+        });
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+        }
     });
 </script>
 

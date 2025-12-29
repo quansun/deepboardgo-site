@@ -170,6 +170,86 @@ p {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
     object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover,
+.gallery img:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.55);
+    outline: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.5rem, 3vw, 3rem);
+    background: rgba(8, 7, 6, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    position: relative;
+    width: min(92vw, 1200px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.lightbox img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+.lightbox-caption {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(15, 14, 13, 0.9);
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+    transform: scale(1.05);
+    background: rgba(30, 28, 26, 0.95);
+    outline: none;
 }
 
 .video-section {
@@ -344,6 +424,10 @@ p {
 
 .devlog-image {
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .devlog-image img {
@@ -352,6 +436,11 @@ p {
     border-radius: 12px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
     object-fit: cover;
+}
+
+.devlog-image img.fixed-thumb {
+    width: auto;
+    max-width: 100%;
 }
 
 .devlog-meta {
