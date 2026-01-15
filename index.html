@@ -94,6 +94,16 @@
                      class="cta-icon">
             </a>
 
+            <!--            <a class="steam-link"-->
+            <!--               href="https://store.steampowered.com/app/4220150/Deep_Board_Go/?utm_source=website&utm_medium=referral&utm_campaign=deepboardgo_site"-->
+            <!--               target="_blank"-->
+            <!--               rel="noopener"-->
+            <!--               aria-label="Wishlist Deep Board Go on Steam">-->
+            <!--                <img src="images/icon.png"-->
+            <!--                     alt="Steam logo"-->
+            <!--                     class="cta-icon">-->
+            <!--            </a>-->
+
 
             <br/>
             <p class="cta-line">
@@ -114,6 +124,8 @@
     <section class="screenshots">
         <h2>In-game Screenshots</h2>
         <div class="gallery">
+            <img src="images/screenshot_008.png" alt="DeepBoardGo 3D Go Kaya Go Board" loading="lazy">
+            <img src="images/screenshot_009.png" alt="DeepBoardGo 3D Go Kaya Go Board" loading="lazy">
             <img src="images/screenshot_001.png" alt="DeepBoardGo 3D Go Kaya Go Board" loading="lazy">
             <img src="images/screenshot_003.png" alt="DeepBoardGo 3D Go Kaya Go Board" loading="lazy">
             <img src="images/screenshot_004.png" alt="DeepBoardGo 3D Go Kaya Go Board" loading="lazy">
@@ -139,6 +151,14 @@
 
     <section class="video-section" aria-label="Deep Board Go video showcase">
         <h2>Watch Deep Board Go in Motion</h2>
+
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7Mgo3x-aGMo?si=egLWc6AHZrLFtlxR"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
         <div class="video-wrapper">
             <iframe width="560" height="315"
                     src="https://www.youtube.com/embed/p7F4Ioqd2zU?si=w__ob4en5USpgsXY"
@@ -234,6 +254,15 @@
         <div class="devlog-list">
             <article class="devlog-item">
                 <div class="devlog-item-meta">
+                    <span class="devlog-date">2025-12-28</span>
+                </div>
+                <h3 class="devlog-item-title">
+                    <a href="dev-log/where-to-buy-kaya-go-boards-outside-japan.html">Where to Buy Hon-Kaya Go Boards If You're Outside Japan</a>
+                </h3>
+                <p class="devlog-item-desc">Trusted sources for buying kaya Go boards internationally, plus shipping and customs tips.</p>
+            </article>
+            <article class="devlog-item">
+                <div class="devlog-item-meta">
                     <span class="devlog-date">2025-12-13</span>
                 </div>
                 <h3 class="devlog-item-title">
@@ -249,9 +278,22 @@
     <p>Copyright 2025 by DeepBoardGo Studio</p>
 </footer>
 
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot preview">
+    <div class="lightbox-content" role="document">
+        <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+        <img id="lightbox-image" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+</div>
+
 <script>
     const form = document.getElementById("subscribe-form");
     const msg = document.getElementById("msg");
+    const gallery = document.querySelector(".gallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeButton = document.querySelector(".lightbox-close");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -270,6 +312,49 @@
 
         msg.textContent = "Thanks! You're on the list 🙂";
         form.reset();
+    });
+
+    const openLightbox = (img) => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "";
+        lightboxCaption.textContent = img.alt || "";
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.classList.remove("modal-open");
+    };
+
+    if (gallery) {
+        gallery.querySelectorAll("img").forEach((img) => {
+            img.setAttribute("role", "button");
+            img.setAttribute("tabindex", "0");
+            img.setAttribute("aria-haspopup", "dialog");
+            img.addEventListener("click", () => openLightbox(img));
+            img.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox(img);
+                }
+            });
+        });
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+        }
     });
 </script>
 
