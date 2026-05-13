@@ -546,6 +546,13 @@ body.modal-open {
     color: inherit;
 }
 
+.footer a,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+    color: #fff;
+}
+
 @media (min-width: 900px) {
     .content {
         flex-direction: row;
