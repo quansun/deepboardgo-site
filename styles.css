@@ -44,6 +44,28 @@ p {
     line-height: 1.7;
 }
 
+.text-block ul,
+.multilingual ul {
+    margin: 0.25rem 0 0;
+    padding-left: 1.2rem;
+    color: #ddd;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.text-block li,
+.multilingual li {
+    margin: 0.35rem 0;
+}
+
+.text-block ul {
+    max-width: 520px;
+}
+
+.multilingual ul {
+    max-width: 900px;
+}
+
 .cta-line {
     display: inline-flex;
     align-items: center;
