@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepBoardGO User Guides</title>
+    <meta name="description" content="Language-specific DeepBoardGO basic controls user guides.">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #111;
+            --panel: #1b1b1b;
+            --text: #eee;
+            --muted: #b9b9b9;
+            --accent: #ffd46b;
+            --link: #cfdfff;
+            --border: rgba(255, 255, 255, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: clamp(1.5rem, 4vw, 3rem);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        main {
+            width: min(820px, 100%);
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 0.75rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .guide-list {
+            display: grid;
+            gap: 0.85rem;
+            margin: 2rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .guide-list a {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel);
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 650;
+        }
+
+        .guide-list a:hover,
+        .guide-list a:focus-visible {
+            border-color: rgba(255, 212, 107, 0.55);
+            color: #fff3c8;
+            outline: none;
+        }
+
+        .native-name {
+            color: var(--accent);
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .home-link:hover,
+        .home-link:focus-visible {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>DeepBoardGO User Guides</h1>
+    <p>Select a language-specific guide for the basic controls, AI analysis controls, and advanced board settings.</p>
+
+    <ul class="guide-list" aria-label="Available user guide languages">
+        <li><a href="guide_en.html"><span>English</span><span class="native-name" lang="en">English</span></a></li>
+        <li><a href="guide_zh-Hans.html"><span>Chinese Simplified</span><span class="native-name" lang="zh-Hans">简体中文</span></a></li>
+        <li><a href="guide_zh-Hant.html"><span>Chinese Traditional</span><span class="native-name" lang="zh-Hant">繁體中文</span></a></li>
+        <li><a href="guide_ja.html"><span>Japanese</span><span class="native-name" lang="ja">日本語</span></a></li>
+        <li><a href="guide_ko.html"><span>Korean</span><span class="native-name" lang="ko">한국어</span></a></li>
+    </ul>
+
+    <a class="home-link" href="../index.html">Back to DeepBoardGO</a>
+</main>
+</body>
+</html>
