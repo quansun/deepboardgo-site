@@ -71,6 +71,21 @@ h2 {
     line-height: 1.25;
 }
 
+.deck-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.deck-heading img {
+    width: 5.45em;
+    height: 3.05em;
+    border-radius: 5px;
+    flex: 0 0 auto;
+    object-fit: contain;
+    object-position: center;
+}
+
 p {
     margin: 0.75rem 0;
     color: var(--muted);

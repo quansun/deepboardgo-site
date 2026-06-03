@@ -1,0 +1,15 @@
+Deep Board Go is playable on Steam Deck.
+
+Use the touch screen to select menu items.
+
+During a game, use the touch screen to rotate the Go board.
+
+Use L1 and R1 to zoom in and out.
+
+Hold L2 and use the touch screen to move the Go board.
+
+Use the right touch pad to control the mouse cursor.
+
+Use R2 to place a move.
+
+Thank you for playing Deep Board Go!
