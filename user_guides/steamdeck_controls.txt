@@ -12,4 +12,6 @@ Use the right touch pad to control the mouse cursor.
 
 Use R2 to place a move.
 
-Thank you for playing Deep Board Go!
+Dear User,
+
+Currently, AI Game on Steamdeck is a bit slow, we will improve the performance on Steamdeck overtime.
