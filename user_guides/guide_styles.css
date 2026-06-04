@@ -71,6 +71,40 @@ h2 {
     line-height: 1.25;
 }
 
+.platform-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.25rem 0 0.2rem;
+}
+
+.platform-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    min-height: 2rem;
+    padding: 0.38rem 0.62rem;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: #f3f3f3;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.platform-icon::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    color: #79d78a;
+    font-size: 1rem;
+    line-height: 1;
+}
+
 .deck-heading {
     display: flex;
     align-items: center;
@@ -103,6 +137,243 @@ ul {
 
 li {
     margin: 0.35rem 0;
+}
+
+.control-icon {
+    display: inline-block;
+    vertical-align: -0.35em;
+    margin-right: 0.55rem;
+}
+
+.mouse-icon {
+    position: relative;
+    width: 1.6rem;
+    height: 2.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 0.72rem;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.mouse-icon::before {
+    content: "";
+    position: absolute;
+    top: 0.12rem;
+    left: 50%;
+    width: 2px;
+    height: 0.55rem;
+    background: rgba(255, 255, 255, 0.42);
+    transform: translateX(-50%);
+}
+
+.mouse-icon::after {
+    content: "";
+    position: absolute;
+    top: 0.76rem;
+    left: 50%;
+    width: 0.28rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
+}
+
+.mouse-icon span {
+    position: absolute;
+    top: 0.12rem;
+    height: 0.62rem;
+    background: var(--accent);
+}
+
+.mouse-icon.left-button span {
+    left: 0.18rem;
+    width: 0.54rem;
+    border-radius: 0.45rem 0 0.12rem 0;
+}
+
+.mouse-icon.right-button span {
+    right: 0.18rem;
+    width: 0.54rem;
+    border-radius: 0 0.45rem 0 0.12rem;
+}
+
+.mouse-icon.wheel-button span {
+    left: 50%;
+    width: 0.28rem;
+    height: 0.68rem;
+    border-radius: 999px;
+    transform: translateX(-50%);
+}
+
+.progress-icon {
+    position: relative;
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 50%;
+    background:
+        conic-gradient(var(--accent) 0 270deg, rgba(255, 255, 255, 0.2) 270deg 360deg);
+}
+
+.progress-icon::after {
+    content: "";
+    position: absolute;
+    inset: 0.32rem;
+    border-radius: 50%;
+    background: var(--panel);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.hover-stone-icon {
+    position: relative;
+    width: 2.25rem;
+    height: 2.1rem;
+}
+
+.hover-stone-icon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.22rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 32%, #ffffff 0 18%, #daddea 45%, #9ca3ba 100%);
+    box-shadow:
+        0 0 0 2px rgba(255, 212, 107, 0.62),
+        0 0 10px rgba(255, 212, 107, 0.38);
+}
+
+.hover-stone-icon span {
+    position: absolute;
+    right: 0;
+    bottom: 0.08rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: #fff;
+    clip-path: polygon(0 0, 0 100%, 32% 73%, 50% 100%, 66% 90%, 48% 64%, 100% 64%);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
+}
+
+.deck-control {
+    position: relative;
+    width: 2.5rem;
+    height: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 0.42rem;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+}
+
+.deck-control::before,
+.deck-control::after {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.deck-screen-tap::before,
+.deck-screen-rotate::before {
+    content: "";
+    inset: 0.35rem 0.42rem;
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: 0.12rem;
+}
+
+.deck-l2-touch::after {
+    content: "";
+    right: 0.28rem;
+    top: 0.35rem;
+    width: 1.15rem;
+    height: 0.8rem;
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: 0.12rem;
+}
+
+.deck-screen-tap::after {
+    content: "";
+    right: 0.28rem;
+    bottom: 0.18rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    background-color: var(--accent);
+    clip-path: polygon(0 0, 0 100%, 32% 73%, 50% 100%, 66% 90%, 48% 64%, 100% 64%);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6));
+}
+
+.deck-screen-rotate::after {
+    content: "↻";
+    right: 0.22rem;
+    bottom: 0.06rem;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.deck-shoulders {
+    width: 3.15rem;
+}
+
+.deck-shoulders::before {
+    content: "L1";
+    left: 0.18rem;
+    top: 0.32rem;
+}
+
+.deck-shoulders::after {
+    content: "R1";
+    right: 0.18rem;
+    top: 0.32rem;
+}
+
+.deck-l2-touch {
+    width: 3.65rem;
+}
+
+.deck-l2-touch::before {
+    content: "L2";
+    left: 0.18rem;
+    top: 0.34rem;
+    width: 1.25rem;
+    height: 1rem;
+    border: 1px solid rgba(255, 212, 107, 0.74);
+    border-radius: 0.28rem;
+    background: rgba(255, 212, 107, 0.12);
+    text-align: center;
+    padding-top: 0.13rem;
+}
+
+.deck-touchpad::before {
+    content: "";
+    left: 0.72rem;
+    top: 0.34rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: 0.22rem;
+    background: rgba(255, 212, 107, 0.18);
+}
+
+.deck-r2::before {
+    content: "R2";
+    left: 50%;
+    top: 50%;
+    width: 1.25rem;
+    height: 1rem;
+    border: 1px solid rgba(255, 212, 107, 0.74);
+    border-radius: 0.28rem;
+    background: rgba(255, 212, 107, 0.12);
+    text-align: center;
+    padding-top: 0.13rem;
+    transform: translate(-50%, -50%);
+}
+
+.deck-shoulders::before,
+.deck-shoulders::after,
+.deck-l2-touch::before,
+.deck-r2::before {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 850;
+    line-height: 1;
 }
 
 strong {
